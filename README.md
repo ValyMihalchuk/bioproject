@@ -20,7 +20,7 @@ cat augustus.whole.fa | grep '>' | wc -l
 /Users/aleksandrkovalenko/anaconda3/pkgs/blast-2.6.0-boost1.64_2/bin/blastp -query peptides.fa -db proteins_db -out proteins.blastp -outfmt "6 qseqid sseqid evalue qcovs pident" -evalue 0.05 -task blastp-short
 
 cat proteins.blastp | cut -f 2 > names.txt
-# их как-то подозрительно мало, 44 белка
+
 
 xargs samtools faidx augustus.whole.fasta < names.txt > localized_proteins.fasta
 **6. Localization prediction**
